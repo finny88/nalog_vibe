@@ -1,10 +1,17 @@
 ## ADDED Requirements
 
+### Requirement: The API MUST treat backend evaluation as authoritative for export
+The system SHALL evaluate the supported apartment-sale case on the backend as the authoritative source for tax outcome and export decisions.
+
+#### Scenario: Client submits supported case data for assessment
+- **WHEN** the web application submits a supported apartment-sale draft for evaluation
+- **THEN** the backend computes the authoritative filing and reduction outcome for export-related decisions
+
 ### Requirement: The system MUST map the supported case into a 2025 declaration structure
 The system SHALL transform the completed canonical apartment-sale case into a declaration representation aligned with the 2025 3-NDFL filing format.
 
 #### Scenario: Completed supported case is prepared for export
-- **WHEN** the user reaches finalization with all required data for the supported apartment-sale case
+- **WHEN** the backend receives all required data for the supported apartment-sale case
 - **THEN** the system produces a declaration representation containing the values required for 2025 XML export
 
 ### Requirement: The system MUST export filing-ready XML for the supported case
@@ -22,7 +29,7 @@ The system SHALL generate an XML document for the supported apartment-sale case 
 The XML export capability SHALL consume a canonical case model rather than requiring the interview flow to store values directly in XML-shaped state.
 
 #### Scenario: Interview data is finalized before export mapping
-- **WHEN** the user completes the supported wizard flow
+- **WHEN** the supported case is ready for export
 - **THEN** the system maps the canonical case into export form as a downstream step rather than treating XML as the primary interaction model
 
 ### Requirement: The system MUST support rule-driven reduction outcomes in export
