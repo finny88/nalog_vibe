@@ -1,16 +1,16 @@
 ## 1. Monorepo Bootstrap
 
-- [ ] 1.1 Initialize the Yarn 4 workspace monorepo with root package management, workspace configuration, shared formatting, and task orchestration.
-- [ ] 1.2 Create the day-one workspace layout with `apps/web`, `apps/api`, `packages/tax-domain`, `packages/tsconfig`, and `packages/eslint-config`.
-- [ ] 1.3 Add shared TypeScript and ESLint foundations so web, api, and workspace packages can build and lint consistently.
-- [ ] 1.4 Configure Husky and lint-staged so staged files run `prettier` and `eslint` before commit, then run workspace-aware TypeScript checks for affected web and api code.
+- [x] 1.1 Initialize the Yarn 4 workspace monorepo with root package management, workspace configuration, shared formatting, and task orchestration.
+- [x] 1.2 Create the day-one workspace layout with `apps/web`, `apps/api`, `packages/tax-domain`, `packages/tsconfig`, and `packages/eslint-config`.
+- [x] 1.3 Add shared TypeScript and ESLint foundations so web, api, and workspace packages can build and lint consistently.
+- [x] 1.4 Configure Husky and lint-staged so staged files run `prettier` and `eslint` before commit, then run workspace-aware TypeScript checks for affected web and api code.
 
 ## 2. Local Infrastructure
 
-- [ ] 2.1 Add Docker Compose configuration for PostgreSQL as the default local database dependency.
-- [ ] 2.2 Configure Prisma and the API environment baseline for local database access.
-- [ ] 2.3 Add root scripts for local development, build, lint, typecheck, and test workflows across the monorepo.
-- [ ] 2.4 Add workspace-aware lint and typecheck commands that can be reused by pre-commit hooks.
+- [x] 2.1 Add Docker Compose configuration for PostgreSQL as the default local database dependency.
+- [x] 2.2 Configure Prisma and the API environment baseline for local database access.
+- [x] 2.3 Add root scripts for local development, build, lint, typecheck, and test workflows across the monorepo.
+- [x] 2.4 Add workspace-aware lint and typecheck commands that can be reused by pre-commit hooks.
 
 ## 3. Shared Domain Foundation
 
