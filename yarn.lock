@@ -1110,6 +1110,8 @@ __metadata:
 "@nalog-vibe/tax-domain@workspace:*, @nalog-vibe/tax-domain@workspace:packages/tax-domain":
   version: 0.0.0-use.local
   resolution: "@nalog-vibe/tax-domain@workspace:packages/tax-domain"
+  dependencies:
+    zod: "npm:4.3.6"
   languageName: unknown
   linkType: soft
 

@@ -22,7 +22,7 @@
 		"lint": "node ./scripts/run-workspaces.mjs lint",
 		"lint:affected": "node ./scripts/workspace-checks.mjs lint",
 		"lint:staged-workspaces": "node ./scripts/workspace-checks.mjs lint --staged",
-		"prepare": "husky",
+		"prepare": "node ./scripts/install-hooks.mjs",
 		"test": "node ./scripts/run-workspaces.mjs test",
 		"typecheck": "node ./scripts/run-workspaces.mjs typecheck",
 		"typecheck:affected": "node ./scripts/workspace-checks.mjs typecheck",

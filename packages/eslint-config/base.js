@@ -1,10 +1,10 @@
-import js from '@eslint/js'
-import stylistic from '@stylistic/eslint-plugin'
 import { defineConfig, globalIgnores } from 'eslint/config'
 import prettierConfig from 'eslint-config-prettier'
 import importPlugin from 'eslint-plugin-import'
 import globals from 'globals'
 import tseslint from 'typescript-eslint'
+import js from '@eslint/js'
+import stylistic from '@stylistic/eslint-plugin'
 
 const sharedRules = {
 	'@stylistic/spaced-comment': ['error', 'always', { exceptions: ['-+'] }],
@@ -31,10 +31,10 @@ const sharedRules = {
 	'no-unsafe-optional-chaining': ['error', { disallowArithmeticOperators: true }]
 }
 
-export const createBaseConfigBlocks = ({ env = 'node', ignores = [] } = {}) => [
+export const createBaseConfigBlocks = ({ env = 'node', files = ['**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'], ignores = [], tsconfigRootDir } = {}) => [
 	globalIgnores(['coverage', 'dist', 'node_modules', ...ignores]),
 	{
-		files: ['**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
+		files,
 		extends: [js.configs.recommended, tseslint.configs.recommended, prettierConfig],
 		plugins: {
 			'@stylistic': stylistic,
@@ -43,12 +43,13 @@ export const createBaseConfigBlocks = ({ env = 'node', ignores = [] } = {}) => [
 		languageOptions: {
 			ecmaVersion: 'latest',
 			sourceType: 'module',
-			globals: env === 'browser' ? globals.browser : globals.node
+			globals: env === 'browser' ? globals.browser : globals.node,
+			parserOptions: tsconfigRootDir ? { tsconfigRootDir } : undefined
 		},
 		rules: sharedRules
 	},
 	{
-		files: ['**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
+		files,
 		settings: {
 			'import/internal-regex': '^@'
 		},
@@ -67,4 +68,4 @@ export const createBaseConfigBlocks = ({ env = 'node', ignores = [] } = {}) => [
 	}
 ]
 
-export const createBaseConfig = ({ env = 'node', ignores = [] } = {}) => defineConfig(createBaseConfigBlocks({ env, ignores }))
+export const createBaseConfig = ({ env = 'node', files, ignores = [], tsconfigRootDir } = {}) => defineConfig(createBaseConfigBlocks({ env, files, ignores, tsconfigRootDir }))

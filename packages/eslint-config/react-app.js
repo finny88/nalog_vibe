@@ -1,3 +1,4 @@
+/* eslint import/order: off */
 import { createRequire } from 'node:module'
 import { defineConfig } from 'eslint/config'
 import boundaries from 'eslint-plugin-boundaries'
@@ -40,11 +41,12 @@ const getFsdBoundaryRules = () => [
 	}))
 ]
 
-export const createReactAppConfig = ({ typescriptProject = './tsconfig.app.json' } = {}) =>
+export const createReactAppConfig = ({ typescriptProject = './tsconfig.app.json', tsconfigRootDir } = {}) =>
 	defineConfig([
 		...createBaseConfigBlocks({
 			env: 'browser',
-			ignores: ['postcss.config.cjs', 'vite.config.ts']
+			ignores: ['postcss.config.cjs', 'vite.config.ts'],
+			tsconfigRootDir
 		}),
 		{
 			files: ['**/*.{ts,tsx,jsx}'],

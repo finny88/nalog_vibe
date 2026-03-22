@@ -16,5 +16,6 @@ dist/
 node_modules/
 playwright-report/
 test-results/
+*.tsbuildinfo
 tsconfig.tsbuildinfo
 vite.config.d.ts

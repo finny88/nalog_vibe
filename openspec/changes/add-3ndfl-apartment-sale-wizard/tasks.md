@@ -14,9 +14,9 @@
 
 ## 3. Shared Domain Foundation
 
-- [ ] 3.1 Define the canonical apartment-sale case model for the supported 2025 scenario in `packages/tax-domain`.
-- [ ] 3.2 Define validation schemas for persisted wizard draft input and backend-facing supported-case input.
-- [ ] 3.3 Define the wizard question catalog contract, including help text, where-to-find guidance, examples, and validation metadata.
+- [x] 3.1 Define the canonical apartment-sale case model for the supported 2025 scenario in `packages/tax-domain`.
+- [x] 3.2 Define validation schemas for persisted wizard draft input and backend-facing supported-case input.
+- [x] 3.3 Define the wizard question catalog contract, including help text, where-to-find guidance, examples, and validation metadata.
 
 ## 4. Web Application Bootstrap
 
@@ -48,8 +48,3 @@
 - [ ] 8.1 Add unit or integration tests for canonical domain validation, draft persistence behavior, and supported-case rule evaluation.
 - [ ] 8.2 Add frontend tests for guarded navigation, required wizard inputs, and guided validation behavior.
 - [ ] 8.3 Add Playwright end-to-end tests for the critical supported wizard path, reload recovery, and final export flow.
-
-
-
-
-

@@ -1,3 +1,3 @@
 import { createNodeAppConfig } from '../../packages/eslint-config/node-app.js'
 
-export default createNodeAppConfig()
+export default createNodeAppConfig({ tsconfigRootDir: import.meta.dirname })
